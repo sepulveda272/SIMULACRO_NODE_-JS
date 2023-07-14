@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getDato,addDato,delDato,getOne,updOne } from "../controller/acciones.controller.js";
+import { getDato,addDato,delDato,getOne,updOne } from "../controller/dinero.controller.js";
 
 const router = Router();
 

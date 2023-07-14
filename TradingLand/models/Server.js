@@ -1,5 +1,8 @@
 import express from "express";
+import tipoDineroRoutes from "../routes/tipoDinero.routes.js";
+import dineroRoutes from "../routes/dinero.routes.js";
 import accionesRoutes from "../routes/acciones.routes.js";
+import tradersRoutes from "../routes/traders.routes.js";
 
 class Server {
 
@@ -7,14 +10,21 @@ class Server {
         this.app=express();
         this.app.use(express.json());
         this.port =process.env.PORT;
+        
+        this.tipoDineroPath = "/api/tipoDinero";
+        this.dineroPath = "/api/dinero";
         this.accionesPath = "/api/accion";
+        this.tradersPath = "/api/trader";
 
         //Routes//
         this.routes();
     }
 
     routes(){
+        this.app.use(this.tipoDineroPath,tipoDineroRoutes);
+        this.app.use(this.dineroPath,dineroRoutes);
         this.app.use(this.accionesPath,accionesRoutes);
+        this.app.use(this.tradersPath,tradersRoutes);
     }
 
     listen(){
