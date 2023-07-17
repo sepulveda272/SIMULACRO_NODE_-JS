@@ -1,47 +1,47 @@
 import Trader from "../models/traders.js";
 
-const getDato = async (req,res)=>{
+const getTraders = async (req,res)=>{
     try {
         const trader = await Trader.find();
         res.send(trader);
     } catch (error) {
         res.status(404);
-        res.send({error:"No funca"});
+        res.send({error:"no funcionaaaa"});
     }
 }
 
-const addDato = async (req,res)=>{
+const addTraders = async (req,res)=>{
     const trader = await Trader(req.body);
     try {
         const nuevo = await trader.save();
         res.send(nuevo);
     } catch (error) {
         res.status(404);
-        res.send({error:"No funca"});
+        res.send({error:"no funcionaaaa"});
     }
 }
 
-const delDato = async (req,res)=>{
+const deleteTraders = async (req,res)=>{
     try {
         const trader = await Trader.deleteOne({_id:req.params.id})
         res.send(trader);
     } catch (error) {
         res.status(404);
-        res.send({error:"No funca"});
+        res.send({error:"no funcionaaaa"});
     }
 }
 
-const getOne = async (req,res)=>{
+const getOneTraders = async (req,res)=>{
     try {
         const trader = await Trader.findOne({_id:req.params.id});
         res.send(trader);
     } catch (error) {
         res.status(404);
-        res.send({error:"No funca"});
+        res.send({error:"no funcionaaaa"});
     }
 }
 
-const updOne = async (req,res)=>{
+const updTraders = async (req,res)=>{
     try {
         const trader = await Trader.findOne({_id:req.params.id});
         if(req.body.nombre){
@@ -58,14 +58,14 @@ const updOne = async (req,res)=>{
 
     } catch (error) {
         res.status(404);
-        res.send({error:"No funca"});
+        res.send({error:"no funcionaaaa"});
     }
 }
 
 export{
-    getDato,
-    addDato,
-    delDato,
-    getOne,
-    updOne
+    getTraders,
+    addTraders,
+    deleteTraders,
+    getOneTraders,
+    updTraders
 }

@@ -1,47 +1,47 @@
 import Acciones from "../models/acciones.js";
 
-const getDato = async (req,res)=>{
+const getAcciones = async (req,res)=>{
     try {
         const accion = await Acciones.find();
         res.send(accion);
     } catch (error) {
         res.status(404);
-        res.send({error:"No funca"});
+        res.send({error:"no funcionaaa"});
     }
 }
 
-const addDato = async (req,res)=>{
+const addAcciones = async (req,res)=>{
     const accion = await Acciones(req.body);
     try {
         const nuevo = await accion.save();
         res.send(nuevo);
     } catch (error) {
         res.status(404);
-        res.send({error:"No funca"});
+        res.send({error:"no funcionaaa"});
     }
 }
 
-const delDato = async (req,res)=>{
+const deleteAcciones = async (req,res)=>{
     try {
         const accion = await Acciones.deleteOne({_id:req.params.id})
         res.send(accion);
     } catch (error) {
         res.status(404);
-        res.send({error:"No funca"});
+        res.send({error:"no funcionaaa"});
     }
 }
 
-const getOne = async (req,res)=>{
+const getAccion = async (req,res)=>{
     try {
         const accion = await Acciones.findOne({_id:req.params.id});
         res.send(accion);
     } catch (error) {
         res.status(404);
-        res.send({error:"No funca"});
+        res.send({error:"no funcionaaa"});
     }
 }
 
-const updOne = async (req,res)=>{
+const updAcciones = async (req,res)=>{
     try {
         const accion = await Acciones.findOne({_id:req.params.id});
         if(req.body.nombre){
@@ -58,14 +58,14 @@ const updOne = async (req,res)=>{
 
     } catch (error) {
         res.status(404);
-        res.send({error:"No funca"});
+        res.send({error:"no funcionaaa"});
     }
 }
 
 export{
-    getDato,
-    addDato,
-    delDato,
-    getOne,
-    updOne
+    getAcciones,
+    addAcciones,
+    deleteAcciones,
+    getAccion,
+    updAcciones
 }

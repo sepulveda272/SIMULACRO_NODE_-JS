@@ -1,47 +1,46 @@
 import TipoDinero from "../models/tipoDinero.js";
 
-const getTipo = async (req,res)=>{
+const getTipoDinero = async (req,res)=>{
     try {
         const tipoDinero = await TipoDinero.find();
         res.send(tipoDinero);
     } catch (error) {
         res.status(404);
-        res.send({error:"No funca"})
+        res.send({error:"no funcionaaaaa"})
     }
 }
 
-const addTipo = async (req,res)=>{
+const addTipoDinero = async (req,res)=>{
     const tipoDinero = new TipoDinero(req.body);
     try {
         const nuevo = await tipoDinero.save();
         res.send(nuevo)
     } catch (error) {
         res.status(404);
-        res.send({error:"No funca"})
+        res.send({error:"no funcionaaaaa"})
     }
 }
 
-const delTipo = async (req,res)=>{
+const deleteTipoDinero = async (req,res)=>{
     try {
         const dato = await TipoDinero.deleteOne({_id:req.params.id})
         res.send(dato)
     } catch (error) {
         res.status(404);
-        res.send({error:"No funca"})
+        res.send({error:"no funcionaaaaa"})
     }
 }
-
-const getOne = async (req,res)=>{
+const getOneTipoDinero = async (req,res)=>{
     try {
         const dato = await TipoDinero.findOne({_id:req.params.id})
         res.send(dato); 
     } catch (error) {
         res.status(404);
-        res.send({error:"No funca"})
+        res.send({error:"no funcionaaaaa"})
     }
 }
 
-const updTipo = async (req,res)=>{
+const updTipoDinero = async (req,res)=>{
     try {
         const dato = await TipoDinero.findOne({_id:req.params.id});
         if(req.body.tipo){
@@ -51,15 +50,15 @@ const updTipo = async (req,res)=>{
         res.send(dato)
     } catch (error) {
         res.status(404);
-        res.send({error:"No funca"})
+        res.send({error:"no funcionaaaaa"})
     }
 }
 
 
 export {
-    getTipo,
-    addTipo,
-    delTipo,
-    updTipo,
-    getOne
+    getTipoDinero,
+    addTipoDinero,
+    deleteTipoDinero,
+    getOneTipoDinero,
+    updTipoDinero
 }

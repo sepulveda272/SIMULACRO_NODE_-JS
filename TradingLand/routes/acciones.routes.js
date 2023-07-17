@@ -1,12 +1,12 @@
 import { Router } from "express";
-import { getDato,addDato,delDato,getOne,updOne } from "../controller/acciones.controller.js";
+import { getAcciones,addAcciones,deleteAcciones,getAccion,updAcciones } from "../controller/acciones.controller.js";
 
 const router = Router();
 
-router.get("/",getDato);
-router.post("/",addDato);
-router.delete("/:id",delDato);
-router.get("/:id",getOne);
-router.put("/:id",updOne)
+router.get("/",getAcciones);
+router.post("/add",addAcciones);
+router.delete("/del/:id",deleteAcciones);
+router.get("/:id",getAccion);
+router.put("/upd/:id",updAcciones)
 
 export default router;

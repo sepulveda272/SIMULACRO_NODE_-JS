@@ -1,47 +1,47 @@
 import Dinero from "../models/dinero.js";
 
-const getDato = async (req,res)=>{
+const getDinero = async (req,res)=>{
     try {
         const dinero = await Dinero.find();
         res.send(dinero);
     } catch (error) {
         res.status(404);
-        res.send({error:"No funca"});
+        res.send({error:"no funcionaaaaa"});
     }
 }
 
-const addDato = async (req,res)=>{
+const addDinero = async (req,res)=>{
     const dinero = await Dinero(req.body);
     try {
         const nuevo = await dinero.save();
         res.send(nuevo);
     } catch (error) {
         res.status(404);
-        res.send({error:"No funca"});
+        res.send({error:"no funcionaaaaa"});
     }
 }
 
-const delDato = async (req,res)=>{
+const deleteDinero = async (req,res)=>{
     try {
         const dinero = await Dinero.deleteOne({_id:req.params.id})
         res.send(dinero);
     } catch (error) {
         res.status(404);
-        res.send({error:"No funca"});
+        res.send({error:"no funcionaaaaa"});
     }
 }
 
-const getOne = async (req,res)=>{
+const getOneDinero = async (req,res)=>{
     try {
         const dinero = await Dinero.findOne({_id:req.params.id});
         res.send(dinero);
     } catch (error) {
         res.status(404);
-        res.send({error:"No funca"});
+        res.send({error:"no funcionaaaaa"});
     }
 }
 
-const updOne = async (req,res)=>{
+const updDinero = async (req,res)=>{
     try {
         const dinero = await Dinero.findOne({_id:req.params.id});
         if(req.body.nombre){
@@ -58,14 +58,14 @@ const updOne = async (req,res)=>{
 
     } catch (error) {
         res.status(404);
-        res.send({error:"No funca"});
+        res.send({error:"no funcionaaaaa"});
     }
 }
 
 export{
-    getDato,
-    addDato,
-    delDato,
-    getOne,
-    updOne
+    getDinero,
+    addDinero,
+    deleteDinero,
+    getOneDinero,
+    updDinero
 }

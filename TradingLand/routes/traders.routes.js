@@ -1,12 +1,12 @@
 import { Router } from "express";
-import { getDato,addDato,delDato,getOne,updOne } from "../controller/traders.controller.js";
+import { getTraders,addTraders,deleteTraders,getOneTraders,updTraders } from "../controller/traders.controller.js";
 
 const router = Router();
 
-router.get("/",getDato);
-router.post("/",addDato);
-router.delete("/:id",delDato);
-router.get("/:id",getOne);
-router.put("/:id",updOne)
+router.get("/",getTraders);
+router.post("/add",addTraders);
+router.delete("/del/:id",deleteTraders);
+router.get("/:id",getOneTraders);
+router.put("/upd/:id",updTraders)
 
 export default router;

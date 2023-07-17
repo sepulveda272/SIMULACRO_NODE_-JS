@@ -13,8 +13,8 @@ class Server {
         
         this.tipoDineroPath = "/api/tipoDinero";
         this.dineroPath = "/api/dinero";
-        this.accionesPath = "/api/accion";
-        this.tradersPath = "/api/trader";
+        this.accionesPath = "/api/acciones";
+        this.tradersPath = "/api/traders";
 
         //Routes//
         this.routes();

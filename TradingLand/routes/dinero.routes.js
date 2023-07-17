@@ -1,12 +1,12 @@
 import { Router } from "express";
-import { getDato,addDato,delDato,getOne,updOne } from "../controller/dinero.controller.js";
+import { getDinero,addDinero,deleteDinero,getOneDinero,updDinero } from "../controller/dinero.controller.js";
 
 const router = Router();
 
-router.get("/",getDato);
-router.post("/",addDato);
-router.delete("/:id",delDato);
-router.get("/:id",getOne);
-router.put("/:id",updOne)
+router.get("/",getDinero);
+router.post("/add",addDinero);
+router.delete("/del/:id",deleteDinero);
+router.get("/:id",getOneDinero);
+router.put("/upd/:id",updDinero)
 
 export default router;
